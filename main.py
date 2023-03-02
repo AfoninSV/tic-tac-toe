@@ -34,18 +34,18 @@ class StartWindow(tk.Frame):
         self.p1_entry.insert(0, 'Enter nickname...')
         self.p2_entry.insert(0, 'Enter nickname...')
         # confirm button
-        self.confirm_btn = tk.Button(self, text='START', width=19,
+        self.confirm_btn = tk.Button(self, text='START', width=18,
                                      command=lambda: [controller.board_raise(),
                                                       controller.set_names(*self.get_names()),
                                                       controller.board_window.turn_label.configure(
-                                                          text=self.p1_entry.get()
+                                                          text=f'Turn: {self.p1_entry.get()}'
                                                       )])
         # positioning
-        self.p1_text.grid(row=1, column=0, padx=100, pady=(100, 0))
-        self.p2_text.grid(row=3, column=0)
-        self.p1_entry.grid(row=2, column=0)
-        self.p2_entry.grid(row=4, column=0)
-        self.confirm_btn.grid(row=5, column=0)
+        self.p1_text.grid(row=1, column=0, padx=(90, 0), pady=(100, 0), sticky='w')
+        self.p2_text.grid(row=3, column=0, padx=(90, 0), sticky='w')
+        self.p1_entry.grid(row=2, column=0, padx=(90, 0), sticky='w')
+        self.p2_entry.grid(row=4, column=0, padx=(90, 0), sticky='w')
+        self.confirm_btn.grid(row=5, column=0, padx=(90, 0), sticky='w')
 
         self.grid(row=0, column=0, sticky='nesw')
 
